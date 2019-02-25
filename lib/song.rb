@@ -1,8 +1,18 @@
-class Song
-  attr_accessor :title
+require 'pry'
 
-  def initialize(title)
-    @title = title
+class Song
+  attr_accessor :name, :artist
+
+  def initialize(name)
+    @name = name
   end
-  
-end
+
+  def self.new_by_filename(filename)
+    array = filename.split(/[-.]/)
+    song = self.new(array[1].strip)
+    @artist = Artist.new(array[0].strip)
+    @artist.save
+    @artist.add_song(song)
+    song
+  end
+end #end of Class
