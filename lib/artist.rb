@@ -3,6 +3,7 @@ require 'pry'
 class Artist
   attr_accessor :name, :songs
   @@all = []
+
   def initialize(name)
     @name = name
     @songs = []
@@ -26,6 +27,6 @@ class Artist
 
   def print_songs
     @songs.each {|song| puts song.title}
+    @songs << songs
   end
-
 end

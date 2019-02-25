@@ -3,8 +3,7 @@ require 'pry'
 class MP3Importer
   attr_accessor :path, :files
   def initialize(music_path)
-    binding.pry
     @path = music_path
-    @files = []
+    @files = Dir.entries(music_path).select{|filename| filename.end_with?(".mp3")}
   end
 end
