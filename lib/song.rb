@@ -1,4 +1,3 @@
-
 require 'pry'
 
 class Song
@@ -12,18 +11,12 @@ class Song
     @artist = artist
   end
 
-  def self.new_by_filename(file)
-    arr = []
-    arr = file.split(" - ")
-    temp = self.new(arr[1])
-    @artist = Artist.new(arr[0])
+  def self.new_by_filename(filename)
+    array = filename.split(/[-.]/)
+    song = self.new(array[1].strip)
+    @artist = Artist.find_or_create_by_name(array[0].strip)
     @artist.save
-    @artist.add_song(temp)
-    temp
-
-  end
-
-  def call_artist
-    @artist
+    @artist.add_song(song)
+    song
   end
 end #end of Class
