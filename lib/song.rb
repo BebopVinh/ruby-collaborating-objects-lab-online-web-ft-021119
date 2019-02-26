@@ -20,6 +20,7 @@ class Song
     @artist.save
     @artist.add_song(temp)
     temp
+    binding.pry
   end
 
   def call_artist
