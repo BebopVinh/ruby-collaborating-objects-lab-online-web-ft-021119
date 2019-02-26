@@ -1,23 +1,4 @@
 require 'pry'
-class Artist
-  attr_accessor :name, :songs
-  @@all = []
-
-  def initialize(name)
-    @name = name
-    @songs = []
-  end
-
-  def name=(artist_nick)
-    @name = artist_nick
-  end
-
-  def add_song(class_song)
-    @songs << class_song
-  end
-
-  def save
-    @@all << selfrequire 'pry'
 
 class Artist
   attr_accessor :name, :songs
