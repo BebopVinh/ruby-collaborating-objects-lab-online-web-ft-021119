@@ -8,6 +8,10 @@ class Song
     @name = name
   end
 
+  def artist=(artist)
+    @artist = artist
+  end
+
   def self.new_by_filename(file)
     arr = []
     arr = file.split(" - ")
@@ -16,5 +20,9 @@ class Song
     @artist.save
     @artist.add_song(temp)
     temp
+  end
+
+  def call_artist
+    @artist
   end
 end #end of Class
