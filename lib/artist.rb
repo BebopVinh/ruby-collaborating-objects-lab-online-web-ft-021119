@@ -1,5 +1,4 @@
 require 'pry'
-
 class Artist
   attr_accessor :name, :songs
   @@all = []
@@ -9,9 +8,12 @@ class Artist
     @songs = []
   end
 
-  def add_song(song)
-    @songs << song
-    song.artist = self
+  def name=(artist_nick)
+    @name = artist_nick
+  end
+
+  def add_song(class_song)
+    @songs << class_song
   end
 
   def save
@@ -22,11 +24,12 @@ class Artist
     @@all
   end
 
-  def self.find_or_create_by_name(name)
-    @@all.find {|artist| artist.name == name} || self.new(name)
-  end
+  # def self.find_or_create_by_name(name)
+  #   @@all.each {|element| return element.name if element.name.include?(name)}
+  #   return self.new(name)
+  # end
 
   def print_songs
-    @songs.each {|song| puts song.name}
+    @songs.each {|element| puts element.name}
   end
 end
