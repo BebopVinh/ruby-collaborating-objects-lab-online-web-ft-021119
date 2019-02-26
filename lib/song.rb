@@ -15,6 +15,7 @@ class Song
     array = filename.split(/[-.]/)
     song = self.new(array[1].strip)
     @artist = Artist.find_or_create_by_name(array[0].strip)
+    song.artist
     @artist.save
     @artist.add_song(song)
     song
