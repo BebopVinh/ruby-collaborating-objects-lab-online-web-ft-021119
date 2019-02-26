@@ -30,18 +30,3 @@ class Artist
     @songs.each {|song| puts song.name}
   end
 end
-  end
-
-  def self.all
-    @@all
-  end
-
-  # def self.find_or_create_by_name(name)
-  #   @@all.each {|element| return element.name if element.name.include?(name)}
-  #   return self.new(name)
-  # end
-
-  def print_songs
-    @songs.each {|element| puts element.name}
-  end
-end
